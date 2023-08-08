@@ -11,9 +11,9 @@ extension StrPasswordValidationError on PasswordValidationError {
       case PasswordValidationError.empty:
         return Strings.of(context)?.errorEmptyPassword;
       case PasswordValidationError.minLength:
-        return Strings.of(context)?.errorMinLengthPassword;
+        return Strings.of(context)?.errorMinLengthPassword(Password._minLength);
       case PasswordValidationError.maxLength:
-        return Strings.of(context)?.errorMaxLengthPassword;
+        return Strings.of(context)?.errorMaxLengthPassword(Password._maxLength);
       case PasswordValidationError.format:
         return Strings.of(context)?.errorFormatPassword;
       default:

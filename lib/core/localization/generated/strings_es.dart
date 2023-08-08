@@ -59,10 +59,14 @@ class StringsEs extends Strings {
   String get errorEmptyUsername => 'Por favor ingrese un nombre de usuario';
 
   @override
-  String get errorMinLengthUsername => 'El nombre de usuario debe tener al menos 4 caracteres';
+  String errorMinLengthUsername(num min) {
+    return 'El nombre de usuario debe tener al menos $min caracteres';
+  }
 
   @override
-  String get errorMaxLengthUsername => 'El nombre de usuario no debe tener más de 56 caracteres';
+  String errorMaxLengthUsername(num max) {
+    return 'El nombre de usuario no debe tener más de $max caracteres';
+  }
 
   @override
   String get errorFormatUsername => 'El nombre de usuario solo debe contener letras, números, guiones y guiones bajos';
@@ -77,10 +81,14 @@ class StringsEs extends Strings {
   String get errorEmptyPassword => 'Por favor ingrese una contraseña';
 
   @override
-  String get errorMinLengthPassword => 'La contraseña debe tener al menos 3 caracteres';
+  String errorMinLengthPassword(num min) {
+    return 'La contraseña debe tener al menos $min caracteres';
+  }
 
   @override
-  String get errorMaxLengthPassword => 'La contraseña no debe tener más de 50 caracteres';
+  String errorMaxLengthPassword(num max) {
+    return 'La contraseña no debe tener más de $max caracteres';
+  }
 
   @override
   String get errorFormatPassword => 'La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un número y un carácter especial';

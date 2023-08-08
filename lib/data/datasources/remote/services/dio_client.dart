@@ -4,7 +4,6 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../core/core.dart';
 import '../../local/local.dart';
-import '../config/config.dart';
 import 'dio_interceptor.dart';
 import 'isolate_parser.dart';
 

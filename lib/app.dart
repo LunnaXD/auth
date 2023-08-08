@@ -48,6 +48,7 @@ class App extends StatelessWidget {
               darkTheme: themeDark(context),
               locale: Locale(state.activeLanguage.name),
               themeMode: state.activeTheme.mode,
+              // useMaterial3: true,
               builder: (BuildContext context, Widget? child) {
                 final MediaQueryData data = MediaQuery.of(context);
 

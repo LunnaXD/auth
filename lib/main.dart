@@ -12,25 +12,25 @@ import 'presentation/presentation.dart';
 import 'utils/utils.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  if (kDebugMode) {
-    Bloc.observer = SimpleBlocObserver();
-  }
-
-  await configureInjection();
-  await FirebaseServices().init();
-
   runZonedGuarded(
     /// Lock device orientation to portrait
-    () => SystemChrome.setPreferredOrientations(
-      [
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown,
-      ],
-    ).then((_) async {
-      runApp(const App());
-    }),
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+
+      if (kDebugMode) {
+        Bloc.observer = SimpleBlocObserver();
+      }
+
+      await configureInjection();
+      await FirebaseServices().init();
+
+      return SystemChrome.setPreferredOrientations(
+        [
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ],
+      ).then((_) => runApp(const App()));
+    },
     (error, stackTrace) async {
       FirebaseCrashlytics.instance.recordError(error, stackTrace);
     },

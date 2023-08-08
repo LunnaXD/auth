@@ -199,17 +199,17 @@ abstract class Strings {
   /// **'Por favor ingrese un nombre de usuario'**
   String get errorEmptyUsername;
 
-  /// No description provided for @errorMinLengthUsername.
+  /// Un mensaje de validacion del minimo de caracteres
   ///
   /// In es, this message translates to:
-  /// **'El nombre de usuario debe tener al menos 4 caracteres'**
-  String get errorMinLengthUsername;
+  /// **'El nombre de usuario debe tener al menos {min} caracteres'**
+  String errorMinLengthUsername(num min);
 
-  /// No description provided for @errorMaxLengthUsername.
+  /// Un mensaje de validacion del maximo de caracteres
   ///
   /// In es, this message translates to:
-  /// **'El nombre de usuario no debe tener más de 56 caracteres'**
-  String get errorMaxLengthUsername;
+  /// **'El nombre de usuario no debe tener más de {max} caracteres'**
+  String errorMaxLengthUsername(num max);
 
   /// No description provided for @errorFormatUsername.
   ///
@@ -235,17 +235,17 @@ abstract class Strings {
   /// **'Por favor ingrese una contraseña'**
   String get errorEmptyPassword;
 
-  /// No description provided for @errorMinLengthPassword.
+  /// Un mensaje de validacion del minimo de caracteres
   ///
   /// In es, this message translates to:
-  /// **'La contraseña debe tener al menos 3 caracteres'**
-  String get errorMinLengthPassword;
+  /// **'La contraseña debe tener al menos {min} caracteres'**
+  String errorMinLengthPassword(num min);
 
-  /// No description provided for @errorMaxLengthPassword.
+  /// Un mensaje de validacion del maximo de caracteres
   ///
   /// In es, this message translates to:
-  /// **'La contraseña no debe tener más de 50 caracteres'**
-  String get errorMaxLengthPassword;
+  /// **'La contraseña no debe tener más de {max} caracteres'**
+  String errorMaxLengthPassword(num max);
 
   /// No description provided for @errorFormatPassword.
   ///

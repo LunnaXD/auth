@@ -11,9 +11,9 @@ extension StrUsernameValidationError on UsernameValidationError {
       case UsernameValidationError.empty:
         return Strings.of(context)?.errorEmptyUsername;
       case UsernameValidationError.minLength:
-        return Strings.of(context)?.errorMinLengthUsername;
+        return Strings.of(context)?.errorMinLengthUsername(Username._minLength);
       case UsernameValidationError.maxLength:
-        return Strings.of(context)?.errorMaxLengthUsername;
+        return Strings.of(context)?.errorMaxLengthUsername(Username._maxLength);
       case UsernameValidationError.format:
         return Strings.of(context)?.errorFormatUsername;
       default:

@@ -17,14 +17,50 @@
   "username": "Nombre de usuario",
   "hintUsername": "eve.holt@reqres.in",
   "errorEmptyUsername": "Por favor ingrese un nombre de usuario",
-  "errorMinLengthUsername": "El nombre de usuario debe tener al menos 4 caracteres",
-  "errorMaxLengthUsername": "El nombre de usuario no debe tener más de 56 caracteres",
+  "errorMinLengthUsername": "El nombre de usuario debe tener al menos {min} caracteres",
+  "@errorMinLengthUsername": {
+    "description": "Un mensaje de validacion del minimo de caracteres",
+    "placeholders": {
+      "min": {
+        "type": "num",
+        "example": "4"
+      }
+    }
+  },
+  "errorMaxLengthUsername": "El nombre de usuario no debe tener más de {max} caracteres",
+  "@errorMaxLengthUsername": {
+    "description": "Un mensaje de validacion del maximo de caracteres",
+    "placeholders": {
+      "max": {
+        "type": "num",
+        "example": "56"
+      }
+    }
+  },
   "errorFormatUsername": "El nombre de usuario solo debe contener letras, números, guiones y guiones bajos",
   "password": "Contraseña",
   "hintPassword": "••••••••••••",
   "errorEmptyPassword": "Por favor ingrese una contraseña",
-  "errorMinLengthPassword": "La contraseña debe tener al menos 3 caracteres",
-  "errorMaxLengthPassword": "La contraseña no debe tener más de 50 caracteres",
+  "errorMinLengthPassword": "La contraseña debe tener al menos {min} caracteres",
+  "@errorMinLengthPassword": {
+    "description": "Un mensaje de validacion del minimo de caracteres",
+    "placeholders": {
+      "min": {
+        "type": "num",
+        "example": "3"
+      }
+    }
+  },
+  "errorMaxLengthPassword": "La contraseña no debe tener más de {max} caracteres",
+  "@errorMaxLengthPassword": {
+    "description": "Un mensaje de validacion del maximo de caracteres",
+    "placeholders": {
+      "max": {
+        "type": "num",
+        "example": "50"
+      }
+    }
+  },
   "errorFormatPassword": "La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un número y un carácter especial",
   "signIn": "Iniciar sesión",
   "logout": "Cerrar sesión",
