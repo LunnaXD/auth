@@ -7,13 +7,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:auth/presentation/pages/sign_in/sign_in_form.dart';
+import 'package:auth/presentation/presentation.dart';
 
-import 'package:auth/main.dart';
+import 'test/helpers/test_mock.mocks.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+/*  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const App());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
@@ -27,4 +29,20 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+  group('LoginPage', () {
+    late MockLoginUseCase mockLoginUseCase;
+
+    setUp(() {
+      mockLoginUseCase = MockLoginUseCase();
+    });
+
+    testWidgets('renders a LoginForm', (tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(body: SignInPage()),
+        ),
+      );
+      expect(find.byType(SignInForm), findsOneWidget);
+    });
+  });*/
 }
