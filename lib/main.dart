@@ -7,14 +7,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app.dart';
+import 'di/injection.dart';
 import 'presentation/presentation.dart';
 import 'utils/utils.dart';
 
-Future<void> mainCommon() async {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   if (kDebugMode) {
     Bloc.observer = SimpleBlocObserver();
   }
 
+  await configureInjection();
   await FirebaseServices().init();
 
   runZonedGuarded(

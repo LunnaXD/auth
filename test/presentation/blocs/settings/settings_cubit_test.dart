@@ -19,7 +19,7 @@ void main() {
 
   setUp(() async {
     await setupMockPreferences();
-    await configureInjection(Env.unitTest);
+    await configureInjection(isUnitTest: true);
     mockCheckThemeUseCase = MockCheckThemeUseCase();
     mockCheckLanguageUseCase = MockCheckLanguageUseCase();
     mockUpdateThemeUseCase = MockUpdateThemeUseCase();

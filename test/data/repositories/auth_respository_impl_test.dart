@@ -17,7 +17,7 @@ void main() {
 
   setUp(() async {
     await setupMockPreferences();
-    await configureInjection(Env.unitTest);
+    await configureInjection(isUnitTest: true);
     mockRemoteDatasource = MockAuthRemoteDataSource();
     mockLocalDataSource = MockAuthLocalDataSource();
     mockNetworkInfo = MockNetworkInfo();

@@ -13,17 +13,14 @@ typedef ResponseConverter<T> = T Function(dynamic response);
 @singleton
 class DioClient {
   final PrefManager prefs;
-  final EnvironmentConfig environmentConfig;
+  String baseUrl = const String.fromEnvironment("BASE_URL");
 
   String? _auth;
-  bool _isUnitTest = false;
-  bool _showLogs = false;
+  final bool _isUnitTest = const bool.fromEnvironment("IS_UNIT_TEST");
+  final bool _showLogs = const bool.fromEnvironment("LOGS");
   late Dio _dio;
 
-  DioClient({required this.prefs, required this.environmentConfig}) {
-    _isUnitTest = environmentConfig.isUnitTest;
-    _showLogs = environmentConfig.showLogs;
-
+  DioClient({required this.prefs}) {
     try {
       _auth = prefs.token;
     } catch (_) {}
@@ -53,7 +50,7 @@ class DioClient {
 
   Dio _createDio() => Dio(
         BaseOptions(
-          baseUrl: environmentConfig.uri(),
+          baseUrl: baseUrl,
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

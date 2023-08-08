@@ -13,7 +13,7 @@ void main() {
 
   setUp(() async {
     await setupMockPreferences();
-    await configureInjection(Env.unitTest);
+    await configureInjection(isUnitTest: true);
     dioAdapter = DioAdapter(dio: getIt<DioClient>().dio);
     dataSource = AuthRemoteDataSourceImpl(client: getIt<DioClient>());
   });

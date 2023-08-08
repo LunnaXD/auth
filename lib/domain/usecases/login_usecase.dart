@@ -37,8 +37,7 @@ class LoginParams {
   });
 
   Map<String, dynamic> toJson() => {
-        "username": username,
+        "email": username,
         "password": password,
-        "remember": remember,
       };
 }
