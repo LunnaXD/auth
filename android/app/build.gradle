@@ -82,6 +82,23 @@ android {
                     'proguard-rules.pro'
         }
     }
+
+    flavorDimensions = ["env"]
+    productFlavors {
+        dev {
+            dimension 'env'
+            versionNameSuffix '-dev'
+            applicationIdSuffix ".dev"
+        }
+        stg {
+            dimension 'env'
+            versionNameSuffix '-stg'
+            applicationIdSuffix ".stg"
+        }
+        prd {
+            dimension 'env'
+        }
+    }
 }
 
 flutter {
@@ -90,4 +107,7 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform("com.google.firebase:firebase-bom:32.2.2")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 }

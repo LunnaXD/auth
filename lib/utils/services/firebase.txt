@@ -1,0 +1,20 @@
+Switch Firebase environments for different Flavors
+Install firebase cli and flutter_fire following the instruction.
+
+firebase login
+and make sure you are logged into the Google account that has access to the above Firebase project.
+
+Now, run flutterfire config specifying the dev app. Specifying --out file that is different from the prod version is also an important part.
+
+flutterfire config \
+  --project=appbase-d33b9 \
+  --out=lib/utils/services/firebase_options_dev.dart \
+  --ios-bundle-id=com.example.auth.auth.dev \
+  --android-app-id=com.example.auth.auth.dev
+
+flutterfire config \
+  --project=appbase-d33b9 \
+  --out=lib/utils/services/firebase_options_stg.dart \
+  --android-app-id=com.example.auth.auth.stg
+
+Default command is flutterfire configure
