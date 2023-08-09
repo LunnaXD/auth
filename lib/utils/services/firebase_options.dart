@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,9 +43,19 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDD0Xdh-vQZn3XJnA17kpZ_GstpmrflaAA',
+    appId: '1:474934669567:web:91768a4a347a0c69ec1cca',
+    messagingSenderId: '474934669567',
+    projectId: 'appbase-d33b9',
+    authDomain: 'appbase-d33b9.firebaseapp.com',
+    storageBucket: 'appbase-d33b9.appspot.com',
+    measurementId: 'G-YKBH18B9FM',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA1k9cxchmE2fgZDmOxgSfHfwXww6mx2B8',
-    appId: '1:474934669567:android:30deac2ce5e6a8feec1cca',
+    appId: '1:474934669567:android:d623e74705f911f2ec1cca',
     messagingSenderId: '474934669567',
     projectId: 'appbase-d33b9',
     storageBucket: 'appbase-d33b9.appspot.com',
@@ -59,11 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAYnDmUKqlBozPl5v7pXaIpvopvlIUWri4',
-    appId: '1:474934669567:ios:a3e9c1b8b1bd37c7ec1cca',
+    appId: '1:474934669567:ios:0f93fa6b691624c5ec1cca',
     messagingSenderId: '474934669567',
     projectId: 'appbase-d33b9',
     storageBucket: 'appbase-d33b9.appspot.com',
-    iosClientId: '474934669567-nofgvrj2jj2rr8t4ra9hlk1ij2rmk3ak.apps.googleusercontent.com',
-    iosBundleId: 'bo.impale.lunna.myReports',
+    iosClientId: '474934669567-lg3qlj1fnfufakf11v9r4hisp3j0bo5l.apps.googleusercontent.com',
+    iosBundleId: 'com.example.auth.auth',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAYnDmUKqlBozPl5v7pXaIpvopvlIUWri4',
+    appId: '1:474934669567:ios:0f93fa6b691624c5ec1cca',
+    messagingSenderId: '474934669567',
+    projectId: 'appbase-d33b9',
+    storageBucket: 'appbase-d33b9.appspot.com',
+    iosClientId: '474934669567-lg3qlj1fnfufakf11v9r4hisp3j0bo5l.apps.googleusercontent.com',
+    iosBundleId: 'com.example.auth.auth',
   );
 }

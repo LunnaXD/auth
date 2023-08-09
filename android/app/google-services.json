@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "474934669567",
+    "project_id": "appbase-d33b9",
+    "storage_bucket": "appbase-d33b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474934669567:android:30deac2ce5e6a8feec1cca",
+        "android_client_info": {
+          "package_name": "bo.impale.lunna.my_reports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474934669567-0uv36fc3ck0v3oebg1u4g6omhf34o9ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1k9cxchmE2fgZDmOxgSfHfwXww6mx2B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474934669567-0uv36fc3ck0v3oebg1u4g6omhf34o9ls.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "474934669567-nofgvrj2jj2rr8t4ra9hlk1ij2rmk3ak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bo.impale.lunna.myReports"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474934669567:android:d623e74705f911f2ec1cca",
+        "android_client_info": {
+          "package_name": "com.example.auth.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474934669567-0uv36fc3ck0v3oebg1u4g6omhf34o9ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1k9cxchmE2fgZDmOxgSfHfwXww6mx2B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474934669567-0uv36fc3ck0v3oebg1u4g6omhf34o9ls.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "474934669567-nofgvrj2jj2rr8t4ra9hlk1ij2rmk3ak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bo.impale.lunna.myReports"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
