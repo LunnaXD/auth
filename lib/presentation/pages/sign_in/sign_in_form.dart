@@ -86,7 +86,7 @@ class _FailureMessage extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(bottom: Dimens.space24),
             child: Text(
-              state.failureMessage(context) ?? '-',
+              state.failureMessage ?? '-',
               style: const TextStyle(color: Palette.red),
             ),
           ),
@@ -121,9 +121,9 @@ class _UsernameInput extends StatelessWidget {
             Icons.alternate_email,
             color: Theme.of(context).textTheme.bodyLarge?.color,
           ),
-          labelText: Strings.of(context)!.username,
-          hintText: Strings.of(context)!.hintUsername,
-          errorText: state.usernameError(context),
+          labelText: strings?.username,
+          hintText: strings?.hintUsername,
+          errorText: state.usernameError,
           onChanged: (value) =>
               context.read<SignInFormBloc>().add(UserNameChanged(value)),
         );
@@ -163,8 +163,8 @@ class _PasswordInput extends StatelessWidget {
             color: Theme.of(context).textTheme.bodyLarge?.color,
           ),
           obscureText: state.hidePassword,
-          labelText: Strings.of(context)!.password,
-          hintText: Strings.of(context)!.hintPassword,
+          labelText: strings?.password,
+          hintText: strings?.hintPassword,
           maxLine: 1,
           suffixIcon: IconButton(
             padding: EdgeInsets.zero,
@@ -176,7 +176,7 @@ class _PasswordInput extends StatelessWidget {
               state.hidePassword ? Icons.visibility_off : Icons.visibility,
             ),
           ),
-          errorText: state.passwordError(context),
+          errorText: state.passwordError,
           onChanged: (value) =>
               context.read<SignInFormBloc>().add(PasswordChanged(value)),
           onEditingComplete: onEditingComplete,
@@ -201,7 +201,7 @@ class _SignInButton extends StatelessWidget {
         return state.status.isSubmissionInProgress
             ? const CircularProgressIndicator()
             : Button(
-                title: Strings.of(context)!.signIn,
+                title: strings?.signIn ?? '',
                 status: state.status.toButtonStatus,
                 onPressed: onSignInWithEmailAndPasswordPressed,
               );

@@ -6,16 +6,16 @@ import '../../../core/core.dart';
 enum UsernameValidationError { empty, minLength, maxLength, format }
 
 extension StrUsernameValidationError on UsernameValidationError {
-  String? message(BuildContext context) {
+  String? get message {
     switch (this) {
       case UsernameValidationError.empty:
-        return Strings.of(context)?.errorEmptyUsername;
+        return strings?.errorEmptyUsername;
       case UsernameValidationError.minLength:
-        return Strings.of(context)?.errorMinLengthUsername(Username._minLength);
+        return strings?.errorMinLengthUsername(Username._minLength);
       case UsernameValidationError.maxLength:
-        return Strings.of(context)?.errorMaxLengthUsername(Username._maxLength);
+        return strings?.errorMaxLengthUsername(Username._maxLength);
       case UsernameValidationError.format:
-        return Strings.of(context)?.errorFormatUsername;
+        return strings?.errorFormatUsername;
       default:
         return '';
     }

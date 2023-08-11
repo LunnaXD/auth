@@ -16,18 +16,18 @@ extension ExtensionMainMenu on MainMenu {
     switch (this) {
       case MainMenu.dashboard:
         return MenuData(
-            label: Strings.of(context)!.dashboard,
+            label: strings?.dashboard ?? '',
             icon: Icons.home_outlined,
             iconSelected: Icons.home);
       case MainMenu.settings:
         return MenuData(
-          label: Strings.of(context)!.settings,
+          label: strings?.settings ?? '',
           icon: Icons.settings,
           iconSelected: Icons.settings,
         );
       case MainMenu.logout:
         return MenuData(
-          label: Strings.of(context)!.logout,
+          label: strings?.logout ?? '',
           icon: Icons.logout,
           iconSelected: Icons.logout_rounded,
         );

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 
 import '../../../core/core.dart';
@@ -6,16 +5,16 @@ import '../../../core/core.dart';
 enum PasswordValidationError { empty, minLength, maxLength, format }
 
 extension StrPasswordValidationError on PasswordValidationError {
-  String? message(BuildContext context) {
+  String? get message {
     switch (this) {
       case PasswordValidationError.empty:
-        return Strings.of(context)?.errorEmptyPassword;
+        return strings?.errorEmptyPassword;
       case PasswordValidationError.minLength:
-        return Strings.of(context)?.errorMinLengthPassword(Password._minLength);
+        return strings?.errorMinLengthPassword(Password._minLength);
       case PasswordValidationError.maxLength:
-        return Strings.of(context)?.errorMaxLengthPassword(Password._maxLength);
+        return strings?.errorMaxLengthPassword(Password._maxLength);
       case PasswordValidationError.format:
-        return Strings.of(context)?.errorFormatPassword;
+        return strings?.errorFormatPassword;
       default:
         return '';
     }

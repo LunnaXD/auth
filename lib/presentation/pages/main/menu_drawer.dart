@@ -154,11 +154,11 @@ class _MenuOptions extends StatelessWidget {
         builder: (context) {
           return AlertDialog(
             title: Text(
-              Strings.of(context)!.logout,
+              strings?.logout ?? '',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             content: Text(
-              Strings.of(context)!.logoutDesc,
+              strings?.logoutDesc ?? '',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             actions: [
@@ -167,7 +167,7 @@ class _MenuOptions extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 child: Text(
-                  Strings.of(context)!.cancel,
+                  strings?.cancel ?? '',
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
@@ -177,7 +177,7 @@ class _MenuOptions extends StatelessWidget {
               TextButton(
                 onPressed: onConfirmLogout,
                 child: Text(
-                  Strings.of(context)!.yes,
+                  strings?.yes ?? '',
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium

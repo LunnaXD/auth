@@ -37,7 +37,7 @@ class _ThemeDropDown extends StatelessWidget {
       builder: (context, state) {
         return DropDown(
           key: const Key("dropdown_theme"),
-          hint: Strings.of(context)!.chooseTheme,
+          hint: strings?.chooseTheme,
           value: state.activeTheme,
           prefixIcon: const Icon(Icons.light),
           items: ThemeModeOptions.values
@@ -45,7 +45,7 @@ class _ThemeDropDown extends StatelessWidget {
                 (data) => DropdownMenuItem(
                   value: data,
                   child: Text(
-                    data.label(context),
+                    data.label ?? '',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
@@ -73,7 +73,7 @@ class _LanguageDropDown extends StatelessWidget {
       builder: (context, state) {
         return DropDown(
           key: const Key("dropdown_language"),
-          hint: Strings.of(context)!.chooseLanguage,
+          hint: strings?.chooseLanguage,
           value: state.activeLanguage,
           prefixIcon: const Icon(Icons.language_outlined),
           items: LanguageOptions.values
@@ -81,7 +81,7 @@ class _LanguageDropDown extends StatelessWidget {
                 (data) => DropdownMenuItem(
                   value: data,
                   child: Text(
-                    data.label(context),
+                    data.label ?? '',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),

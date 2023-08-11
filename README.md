@@ -1,6 +1,9 @@
 # Base structure for projects
 
 This is App with Auth Function like Login. All API using [reqres.in](https://reqres.in/).
+`
+"email": "eve.holt@reqres.in",
+"password": "cityslicka"`
 <br>This app also implementing **Flutter Clean Architecture.**
 
 ## Getting Started

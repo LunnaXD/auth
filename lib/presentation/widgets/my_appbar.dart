@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar {
-  const MyAppBar();
+  final String? title;
+  final List<Widget>? actions;
 
-  PreferredSize call() => PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: AppBar(elevation: 0),
-      );
+  const MyAppBar({this.title, this.actions});
+
+  PreferredSize call(BuildContext context) => PreferredSize(
+    preferredSize: const Size.fromHeight(kToolbarHeight),
+    child: AppBar(
+      elevation: 0,
+      title: Text(
+        title ?? "-",
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
+      actions: actions,
+    ),
+  );
 }

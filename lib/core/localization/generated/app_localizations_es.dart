@@ -1,8 +1,8 @@
-import 'strings.dart';
+import 'app_localizations.dart';
 
 /// The translations for Spanish Castilian (`es`).
-class StringsEs extends Strings {
-  StringsEs([String locale = 'es']) : super(locale);
+class AppLocalizationsEs extends AppLocalizations {
+  AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
   String get badRequest => 'Solicitud incorrecta';

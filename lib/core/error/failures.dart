@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 import '../localization/localization.dart';
 
@@ -22,60 +21,34 @@ enum ErrorType {
 }
 
 extension ExtensionErrorType on ErrorType {
-  String? message(BuildContext context) {
+  String? get message {
     switch (this) {
       case ErrorType.badRequest:
-        return Strings
-            .of(context)
-            ?.badRequest;
+        return strings?.badRequest;
       case ErrorType.unauthorized:
-        return Strings
-            .of(context)
-            ?.unauthorized;
+        return strings?.unauthorized;
       case ErrorType.forbidden:
-        return Strings
-            .of(context)
-            ?.forbidden;
+        return strings?.forbidden;
       case ErrorType.internalServerError:
-        return Strings
-            .of(context)
-            ?.internalServerError;
+        return strings?.internalServerError;
       case ErrorType.badGateway:
-        return Strings
-            .of(context)
-            ?.badGateway;
+        return strings?.badGateway;
       case ErrorType.other:
-        return Strings
-            .of(context)
-            ?.other;
+        return strings?.other;
       case ErrorType.connectTimeout:
-        return Strings
-            .of(context)
-            ?.connectTimeout;
+        return strings?.connectTimeout;
       case ErrorType.sendTimeout:
-        return Strings
-            .of(context)
-            ?.sendTimeout;
+        return strings?.sendTimeout;
       case ErrorType.receiveTimeout:
-        return Strings
-            .of(context)
-            ?.receiveTimeout;
+        return strings?.receiveTimeout;
       case ErrorType.badCertificate:
-        return Strings
-            .of(context)
-            ?.badCertificate;
+        return strings?.badCertificate;
       case ErrorType.cancelRequest:
-        return Strings
-            .of(context)
-            ?.cancelRequest;
+        return strings?.cancelRequest;
       case ErrorType.connectionError:
-        return Strings
-            .of(context)
-            ?.connectionError;
+        return strings?.connectionError;
       case ErrorType.unknown:
-        return Strings
-            .of(context)
-            ?.unknown;
+        return strings?.unknown;
       case ErrorType.error404:
       case ErrorType.unexpectedFailure:
         return null;
@@ -86,7 +59,7 @@ extension ExtensionErrorType on ErrorType {
 abstract class Failure extends Equatable {
   const Failure([List properties = const <dynamic>[]]);
 
-  String? errorStr(BuildContext context);
+  String? get errorStr;
 }
 
 // General failures
@@ -102,8 +75,8 @@ class ServerFailure extends Failure {
   bool get haveMessage => message != null && message!.isNotEmpty;
 
   @override
-  String? errorStr(BuildContext context) =>
-      haveMessage ? message : errorType.message(context);
+  String? get errorStr =>
+      haveMessage ? message : errorType.message;
 }
 
 class NoDataFailure extends Failure {
@@ -111,7 +84,7 @@ class NoDataFailure extends Failure {
   List<Object?> get props => [];
 
   @override
-  String? errorStr(BuildContext context) => null;
+  String? get errorStr => null;
 }
 
 class CacheFailure extends Failure {
@@ -123,5 +96,5 @@ class CacheFailure extends Failure {
   List<Object?> get props => [message];
 
   @override
-  String? errorStr(BuildContext context) => message;
+  String? get errorStr => message;
 }

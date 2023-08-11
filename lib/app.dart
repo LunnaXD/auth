@@ -40,7 +40,7 @@ class App extends StatelessWidget {
                 p.activeLanguage != c.activeLanguage,
             builder: (_, state) => MaterialApp.router(
               routerConfig: AppRoute.router,
-              localizationsDelegates: Strings.localizationsDelegates,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: L10n.all,
               debugShowCheckedModeBanner: false,
               title: "Constants.get.appName",

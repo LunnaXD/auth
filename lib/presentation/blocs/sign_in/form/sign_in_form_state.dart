@@ -20,15 +20,15 @@ class SignInFormState with _$SignInFormState {
         autoValidate: false,
       );
 
-  String? failureMessage(BuildContext context) => failure?.errorStr(context);
+  String? get failureMessage => failure?.errorStr;
 
-  String? usernameError(BuildContext context) =>
+  String? get usernameError =>
       autoValidate && form.username.isNotValid
-          ? form.username.error?.message(context)
+          ? form.username.error?.message
           : null;
 
-  String? passwordError(BuildContext context) =>
+  String? get passwordError =>
       autoValidate && form.password.isNotValid
-          ? form.password.error?.message(context)
+          ? form.password.error?.message
           : null;
 }
