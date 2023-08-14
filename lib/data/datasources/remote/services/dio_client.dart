@@ -4,13 +4,14 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../core/core.dart';
 import '../../local/local.dart';
+import '../../../../utils/utils.dart';
 import 'dio_interceptor.dart';
 import 'isolate_parser.dart';
 
 typedef ResponseConverter<T> = T Function(dynamic response);
 
 @singleton
-class DioClient {
+class DioClient with FirebaseCrashLogger {
   final PrefManager prefs;
   String baseUrl = const String.fromEnvironment("BASE_URL");
 
@@ -91,7 +92,10 @@ class DioClient {
       );
       final result = await isolateParse.parseInBackground();
       return Right(result);
-    } on DioError catch (e) {
+    } on DioError catch (e, stackTrace) {
+      if (!_isUnitTest && !_showLogs) {
+        nonFatalError(error: e, stackTrace: stackTrace);
+      }
       return Left(ServerException.fromDioError(e));
     } catch (e) {
       return Left(ServerException.create(e));
@@ -124,7 +128,10 @@ class DioClient {
       );
       final result = await isolateParse.parseInBackground();
       return Right(result);
-    } on DioError catch (e) {
+    } on DioError catch (e, stackTrace) {
+      if (!_isUnitTest  && !_showLogs) {
+        nonFatalError(error: e, stackTrace: stackTrace);
+      }
       return Left(ServerException.fromDioError(e));
     } catch (e) {
       return Left(ServerException.create(e.toString()));
