@@ -13,10 +13,10 @@ class Palette {
   static const Color textAlt = Color(0xff3D3D3D);
   static const Color hint = Color(0xff7E7E7E);
   static const Color disable = Color(0xffC4C4C4);
-  static const Color red = Color(0xffED6464);
+  static const Color error = Color(0xffED6464);
   static const Color divider = Color(0xffE0E0E0);
-  static const Color yellow = Color(0xffF7BD00);
-  static const Color green = Color(0xff27AE60);
+  static const Color alert = Color(0xffF7BD00);
+  static const Color success = Color(0xff27AE60);
   static const Color black10 = Color(0x1A000000);
   static const Color black15 = Color(0x26000000);
   static const Color black20 = Color(0x33000000);

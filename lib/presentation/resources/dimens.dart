@@ -52,3 +52,24 @@ class Dimens {
   static const double cornerRadius = 15;
   static const double cornerRadiusBottomSheet = 30;
 }
+
+class DimensConst {
+  DimensConst._();
+
+  static const double marginExtraSmall = 2;
+  static const double marginSmall = 4;
+  static const double marginLittle = 8;
+  static const double marginNormal = 16.0;
+  static const double marginMedium = 24.0;
+  static const double marginLarge = 32.0;
+  static const double marginExtraLarge = 48;
+
+  static const double heightFieldNormal = 48;
+  static const double heightFieldDense = 32;
+
+  static const double iconSizeSmall = 16.0;
+  static const double iconSizeLittle = 18.0;
+  static const double iconSizeNormal = 24.0;
+  static const double iconSizeMedium = 28.0;
+  static const double iconSizeLarge = 32.0;
+}

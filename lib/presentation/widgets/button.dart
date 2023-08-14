@@ -84,6 +84,6 @@ class Button extends StatelessWidget {
   }
 
   Widget _successIndicator() {
-    return const Icon(Icons.check, color: Palette.green);
+    return const Icon(Icons.check, color: Palette.success);
   }
 }

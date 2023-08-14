@@ -87,7 +87,7 @@ class _FailureMessage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: Dimens.space24),
             child: Text(
               state.failureMessage ?? '-',
-              style: const TextStyle(color: Palette.red),
+              style: const TextStyle(color: Palette.error),
             ),
           ),
         );

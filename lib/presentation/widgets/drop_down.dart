@@ -68,12 +68,12 @@ class DropDown<T> extends StatelessWidget {
                   focusedErrorBorder: OutlineInputBorder(
                     gapPadding: 0,
                     borderRadius: BorderRadius.circular(Dimens.space4),
-                    borderSide: const BorderSide(color: Palette.red),
+                    borderSide: const BorderSide(color: Palette.error),
                   ),
                   errorBorder: OutlineInputBorder(
                     gapPadding: 0,
                     borderRadius: BorderRadius.circular(Dimens.space4),
-                    borderSide: const BorderSide(color: Palette.red),
+                    borderSide: const BorderSide(color: Palette.error),
                   ),
                   focusedBorder: OutlineInputBorder(
                     gapPadding: 0,

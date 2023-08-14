@@ -28,6 +28,7 @@ class InputText extends StatefulWidget {
   final String? hintText;
   final Iterable<String>? autofillHints;
   final VoidCallback? onEditingComplete;
+  final EdgeInsetsGeometry? margin;
 
   const InputText({
     super.key,
@@ -55,6 +56,7 @@ class InputText extends StatefulWidget {
     this.hintText,
     this.autofillHints,
     this.onEditingComplete,
+    this.margin,
   });
 
   @override
@@ -65,7 +67,7 @@ class _InputTextState extends State<InputText> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: Dimens.space8),
+      margin: widget.margin ?? EdgeInsets.symmetric(vertical: Dimens.space8),
       child: TextFormField(
         key: widget.key,
         autofillHints: widget.autofillHints,
@@ -94,7 +96,7 @@ class _InputTextState extends State<InputText> {
           hintStyle: Theme.of(context)
               .textTheme
               .bodyMedium
-              ?.copyWith(color: Palette.disable),
+              ?.copyWith(color: Palette.hint),
           suffixIcon: widget.suffixIcon,
           prefixIcon: Padding(
             padding: EdgeInsets.symmetric(horizontal: Dimens.space12),
@@ -111,7 +113,7 @@ class _InputTextState extends State<InputText> {
           enabledBorder: OutlineInputBorder(
             gapPadding: 0,
             borderRadius: BorderRadius.circular(Dimens.space4),
-            borderSide: const BorderSide(color: Palette.disable),
+            borderSide: const BorderSide(color: Palette.hint),
           ),
           disabledBorder: OutlineInputBorder(
             gapPadding: 0,
@@ -121,16 +123,16 @@ class _InputTextState extends State<InputText> {
           errorStyle: Theme.of(context)
               .textTheme
               .labelSmall
-              ?.copyWith(color: Palette.red),
+              ?.copyWith(color: Palette.error),
           focusedErrorBorder: OutlineInputBorder(
             gapPadding: 0,
             borderRadius: BorderRadius.circular(Dimens.space4),
-            borderSide: const BorderSide(color: Palette.red),
+            borderSide: const BorderSide(color: Palette.error),
           ),
           errorBorder: OutlineInputBorder(
             gapPadding: 0,
             borderRadius: BorderRadius.circular(Dimens.space4),
-            borderSide: const BorderSide(color: Palette.red),
+            borderSide: const BorderSide(color: Palette.error),
           ),
           focusedBorder: OutlineInputBorder(
             gapPadding: 0,

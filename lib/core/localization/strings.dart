@@ -1,4 +1,4 @@
-import 'package:auth/utils/services/services.dart';
+import '../../utils/utils.dart';
 
 import 'generated/app_localizations.dart';
 

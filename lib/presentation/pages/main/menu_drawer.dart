@@ -181,7 +181,7 @@ class _MenuOptions extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
-                      ?.copyWith(color: Palette.red),
+                      ?.copyWith(color: Palette.error),
                 ),
               ),
             ],

@@ -26,6 +26,9 @@ enum Routes {
   final String path;
 }
 
+final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppRoute {
   static late BuildContext context;
 
@@ -36,27 +39,32 @@ class AppRoute {
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
         path: Routes.splashScreen.path,
         name: Routes.splashScreen.name,
         builder: (context, state) => const SplashScreenPage(),
       ),
       GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
         path: Routes.root.path,
         name: Routes.root.name,
         redirect: (context, state) => Routes.dashboard.path,
       ),
       GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
         path: Routes.login.path,
         name: Routes.login.name,
         builder: (_, __) => const SignInPage(),
       ),
       ShellRoute(
+        navigatorKey: _shellNavigatorKey,
         builder: (_, __, child) => BlocProvider<MainMenuCubit>(
           create: (context) => getIt<MainMenuCubit>(),
           child: MainPage(child: child),
         ),
         routes: [
           GoRoute(
+            parentNavigatorKey: _shellNavigatorKey,
             path: Routes.dashboard.path,
             name: Routes.dashboard.name,
             builder: (_, __) =>
@@ -70,6 +78,7 @@ class AppRoute {
             ,
           ),
           GoRoute(
+            parentNavigatorKey: _shellNavigatorKey,
             path: Routes.settings.path,
             name: Routes.settings.name,
             builder: (_, __) => const SettingsPage(),
@@ -77,6 +86,7 @@ class AppRoute {
         ],
       ),
     ],
+    navigatorKey: _rootNavigatorKey,
     initialLocation: Routes.splashScreen.path,
     routerNeglect: true,
     debugLogDiagnostics: kDebugMode,

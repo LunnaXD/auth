@@ -27,7 +27,7 @@ class ButtonNotification extends StatelessWidget {
               bottom: Dimens.space6,
               child: Visibility(
                 child: CircleAvatar(
-                  backgroundColor: Palette.red,
+                  backgroundColor: Palette.error,
                   maxRadius: Dimens.space8,
                   child: Center(
                     child: Text(
